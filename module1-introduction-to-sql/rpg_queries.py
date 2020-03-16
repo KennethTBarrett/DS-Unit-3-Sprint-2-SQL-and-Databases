@@ -54,7 +54,9 @@ total_items = (number_weapons[0] + number_items[0])
 print(f'Total Number of Items: {total_items}')
 
 # How many items does each character have? (First 20 rows)
-first_twenty_items_query = "SELECT SUM(item_id) FROM charactercreator_character_inventory GROUP BY character_id LIMIT 20;"
+first_twenty_items_query = ("SELECT SUM(item_id) FROM " +
+                            "charactercreator_character_inventory " +
+                            "GROUP BY character_id LIMIT 20;")
 first_twenty_items = c.execute(first_twenty_items_query).fetchall()
 
 print(f"Each Character's Number of Items (First 20 Characters):")
@@ -63,7 +65,10 @@ for i in range(0, 20):
 
 
 # How many weapons does each character have? (First 20 rows)
-first_twenty_weap_query = "SELECT SUM(item_ptr_id) FROM charactercreator_character_inventory, armory_weapon WHERE item_id = item_ptr_id GROUP BY character_id LIMIT 20;"
+first_twenty_weap_query = ("SELECT SUM(item_ptr_id) FROM " +
+                           "charactercreator_character_inventory, "
+                           "armory_weapon WHERE item_id = item_ptr_id " +
+                           "GROUP BY character_id LIMIT 20;")
 number_weap_per = c.execute(first_twenty_weap_query).fetchall()
 
 print(f"Each Character's Number of Weapons (First 20 Characters):")
@@ -71,11 +76,16 @@ for i in range(0, 20):
     print(f'Character {i + 1}: {number_weap_per[i][0]}')
 
 # On average, how many items does each character have?
-avg_items_query = "SELECT AVG(item_id) FROM (SELECT DISTINCT item_id, character_id FROM charactercreator_character_inventory);"
+avg_items_query = ("SELECT AVG(item_id) FROM (SELECT DISTINCT item_id, " +
+                   "character_id FROM charactercreator_character_inventory);")
+
 avg_item_per = c.execute(avg_items_query).fetchone()
 print(f'Each Character has an Average of {round(avg_item_per[0])} items (entire database).')
 
 # On average, how many weapons does each character have?
-avg_weap_query = "SELECT AVG(item_ptr_id) FROM (SELECT DISTINCT item_ptr_id, character_id FROM charactercreator_character_inventory, armory_weapon WHERE item_id = item_ptr_id);"
+avg_weap_query = ("SELECT AVG(item_ptr_id) FROM (SELECT DISTINCT " +
+                  "item_ptr_id character_id FROM " +
+                  "charactercreator_character_inventory, armory_weapon " +
+                  "WHERE item_id = item_ptr_id);")
 avg_weap_per = c.execute(avg_weap_query).fetchone()
 print(f'Each Character has an Average of {round(avg_weap_per[0])} weapons (entire database).')
