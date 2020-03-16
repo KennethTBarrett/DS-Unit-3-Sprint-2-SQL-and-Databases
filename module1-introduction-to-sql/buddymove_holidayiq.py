@@ -25,4 +25,5 @@ else:
 ns_query = ("SELECT COUNT(User_Id) FROM review " +
             "WHERE Nature >= 100 AND Shopping >= 100;")
 ns = c.execute(ns_query).fetchone()[0]
+
 print(f'{ns} people who reviewed Nature 100+ also reviewed Shopping 100+.')

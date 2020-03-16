@@ -42,11 +42,13 @@ print(f'Number of Characters in Subclass - Thief: {number_thief[0]}')
 # Items
 items_query = "SELECT COUNT(item_id) FROM armory_item;"
 number_items = c.execute(items_query).fetchone()
+
 print(f'Number of Non-Weapon Items: {number_items[0]}')
 
 # Weapons
 weapons_query = "SELECT COUNT(item_ptr_id) FROM armory_weapon;"
 number_weapons = c.execute(weapons_query).fetchone()
+
 print(f'Number of Weapons: {number_weapons[0]}')
 
 # What is the total number of items?
@@ -63,7 +65,6 @@ print(f"Each Character's Number of Items (First 20 Characters):")
 for i in range(0, 20):
     print(f'Character {i + 1}: {first_twenty_items[i][0]}')
 
-
 # How many weapons does each character have? (First 20 rows)
 first_twenty_weap_query = ("SELECT SUM(item_ptr_id) FROM " +
                            "charactercreator_character_inventory, "
@@ -78,8 +79,8 @@ for i in range(0, 20):
 # On average, how many items does each character have?
 avg_items_query = ("SELECT AVG(item_id) FROM (SELECT DISTINCT item_id, " +
                    "character_id FROM charactercreator_character_inventory);")
-
 avg_item_per = c.execute(avg_items_query).fetchone()
+
 print(f'Each Character has an Average of {round(avg_item_per[0])} items (entire database).')
 
 # On average, how many weapons does each character have?
@@ -88,4 +89,5 @@ avg_weap_query = ("SELECT AVG(item_ptr_id) FROM (SELECT DISTINCT " +
                   "charactercreator_character_inventory, armory_weapon " +
                   "WHERE item_id = item_ptr_id);")
 avg_weap_per = c.execute(avg_weap_query).fetchone()
+
 print(f'Each Character has an Average of {round(avg_weap_per[0])} weapons (entire database).')
