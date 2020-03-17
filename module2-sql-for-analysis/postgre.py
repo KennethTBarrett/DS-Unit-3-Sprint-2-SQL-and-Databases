@@ -10,10 +10,10 @@ characters = sl_curs.execute('SELECT * FROM ' +
                              'charactercreator_character;').fetchall()
 
 # Credentials for PostgreSQL
-dbname = 'mhybrmvs'
-user = 'mhybrmvs'
-password = 'PEag8Ktk0_hhPP48y5k6m6Xef0f9t2iO'
-host = 'hansken.db.elephantsql.com'
+dbname = 'SNIP'
+user = 'SNIP'
+password = 'SNIP'
+host = 'SNIP'
 
 # Connect to Postgre database
 pg_conn = psycopg2.connect(dbname=dbname, user=user,
