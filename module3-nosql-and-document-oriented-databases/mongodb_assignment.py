@@ -10,7 +10,7 @@
 
 import pymongo
 
-client = pymongo.MongoClient("mongodb+srv://admin:MGrax21zCrMdyG4m" +
+client = pymongo.MongoClient("mongodb+srv://admin:PasswordSNIP" +
                              "@cluster0-dc2kq.mongodb.net/test?" +
                              "retryWrites=true&w=majority")
 db = client.test
