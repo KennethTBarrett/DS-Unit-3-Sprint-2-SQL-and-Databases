@@ -1,0 +1,12 @@
+/* Query For How You'd Create Same Table Manually */
+
+CREATE TABLE titanic (
+    "Survived" INT,
+    "Pclass" INT, 
+    "Name" VARCHAR(255),
+    "Sex" VARCHAR(10),
+    "Age" INT,
+    "Siblings/Spouses Aboard" INT,
+    "Parents/Children Aboard" INT,
+    "Fare" FLOAT
+);
