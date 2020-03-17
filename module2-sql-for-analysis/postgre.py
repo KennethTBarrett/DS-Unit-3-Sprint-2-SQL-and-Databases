@@ -64,7 +64,7 @@ if rows_in_sqlite == rows_in_postgre:
     for i in range(0, 10):
         print(f'Row {i + 1}: {first_ten[i][1:]}')
 else:
-    print('Number of Rows Mismatched!')
+        print('Number of Rows Mismatched!')
 
 pg_curs.close()  # Close cursor
 pg_conn.commit()  # Commit all changes
