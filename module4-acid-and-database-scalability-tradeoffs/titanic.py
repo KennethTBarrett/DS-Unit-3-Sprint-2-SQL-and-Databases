@@ -10,7 +10,7 @@ password = 'SNIP'
 host = 'SNIP'
 
 # MongoDB Client
-client = pymongo.MongoClient("mongodb+srv://admin:ICallThisSNIPPED" +
+client = pymongo.MongoClient("mongodb+srv://admin:ICALLTHISSNIPPED" +
                              "@cluster0-hyo9i.mongodb.net/test?" +
                              "retryWrites=true&w=majority")
 db = client.test
@@ -387,5 +387,5 @@ print(f'Number of Duplicate Names: {dup_name_pg[0]}')
 # MongoDB
 print('=========== MongoDB ===========')
 
-pg_conn.close()
 pg_conn.commit()
+pg_conn.close()
