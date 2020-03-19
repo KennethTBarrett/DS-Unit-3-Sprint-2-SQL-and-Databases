@@ -4,13 +4,13 @@ import pymongo
 import sqlite3
 
 # PostgreSQL Credentials
-dbname = 'aucfibxl'
-user = 'aucfibxl'
-password = 'b9Yj0Y5A48Ry2ZcR3ZYY8xNUYtSk4mCw'
-host = 'drona.db.elephantsql.com'
+dbname = 'SNIP'
+user = 'SNIP'
+password = 'SNIP'
+host = 'SNIP'
 
 # MongoDB Client
-client = pymongo.MongoClient("mongodb+srv://admin:1ujesN4VwaWFl5uF" +
+client = pymongo.MongoClient("mongodb+srv://admin:ICallThisSNIPPED" +
                              "@cluster0-hyo9i.mongodb.net/test?" +
                              "retryWrites=true&w=majority")
 db = client.test
