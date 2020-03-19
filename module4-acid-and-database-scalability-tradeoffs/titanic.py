@@ -4,13 +4,13 @@ import pymongo
 import sqlite3
 
 # PostgreSQL Credentials
-dbname = 'SNIP'
-user = 'SNIP'
-password = 'SNIP'
+dbname = 'aucfibxl'
+user = 'aucfibxl'
+password = 'b9Yj0Y5A48Ry2ZcR3ZYY8xNUYtSk4mCw'
 host = 'drona.db.elephantsql.com'
 
 # MongoDB Client
-client = pymongo.MongoClient("mongodb+srv://admin:ICallThisSNIPPED" +
+client = pymongo.MongoClient("mongodb+srv://admin:1ujesN4VwaWFl5uF" +
                              "@cluster0-hyo9i.mongodb.net/test?" +
                              "retryWrites=true&w=majority")
 db = client.test
@@ -386,3 +386,6 @@ print(f'Number of Duplicate Names: {dup_name_pg[0]}')
 
 # MongoDB
 print('=========== MongoDB ===========')
+
+pg_conn.close()
+pg_conn.commit()
